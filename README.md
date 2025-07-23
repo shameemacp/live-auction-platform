@@ -49,20 +49,6 @@ This Laravel application allows users to:
 - Bidders can send messages
 - Chat updates instantly using WebSockets
 
-##  Real-Time Functionality
-
-| Event                  | Trigger                         | Action                                 |
-|------------------------|----------------------------------|----------------------------------------|
-| `NewBidPlaced`         | User places bid                 | Updates current price on all screens   |
-| `AuctionTimeExtended`  | Bid in last 10 seconds          | Extends auction by 15 seconds          |
-| `NewMessage`           | Chat message sent               | Broadcasts chat message to all users   |
-
-Broadcasts use:
-
-```php
-PrivateChannel('product.{product_id}')
-
-
 ##  Security
 
 - Role-based access via middleware
@@ -75,3 +61,12 @@ PrivateChannel('product.{product_id}')
 - Live video stream for auctions
 - Bid notifications
 - Admin analytics dashboard
+
+##  Real-Time Functionality
+
+| Event                  | Trigger                         | Action                                 |
+|------------------------|----------------------------------|----------------------------------------|
+| `NewBidPlaced`         | User places bid                 | Updates current price on all screens   |
+| `AuctionTimeExtended`  | Bid in last 10 seconds          | Extends auction by 15 seconds          |
+| `NewMessage`           | Chat message sent               | Broadcasts chat message to all users   |
+
