@@ -1,7 +1,7 @@
 @extends('backend.layouts.app')
 
 @section('content')
-    <div class="">
+    <div class="p-4 m-4">
             <div class="page-content">
                 <div class="container-fluid">
                 <h2>Live Auctions</h2>

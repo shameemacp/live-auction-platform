@@ -40,12 +40,17 @@ class RegisteredUserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'role' => 'bidder',
         ]);
 
         event(new Registered($user));
 
         Auth::login($user);
 
-        return redirect(RouteServiceProvider::HOME);
+        if ($user->role === 'admin') {
+            return redirect()->route('products.index');
+        } else {
+            return redirect()->route('auctions.index');
+        }
     }
 }
